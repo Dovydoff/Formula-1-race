@@ -37,26 +37,39 @@ function getUserInput() {
         distance = +prompt("Enter distance of track: :",100);
     } while (!isPositiveInteger(distance));
 
-    
+
 function isPositiveInteger(input) {
     return Number.isInteger(input) && input >0;
 }
     
 
 
+//!2 Sukurti kontruktoriu 
 
-//    do {
-//     numberOfCars = window.prompt("Enter how much cars you want in race: ");
-//    } while (numberOfCars <= 4 ); 
-//    do {   
-//    } while (distance <=99);
-//    distance = window.prompt("Enter distance of track: ");
-//     } 
+class Car {
+    constructor(id){
+        this.id = id;
+        this.speed = 0;
+        this.distance = 0;
+    }
+    accelerate(howMuch){
+        this.speed += howMuch;
+    }
+    slowDown(howMuch){
+        this.speed -= howMuch;
+        if (this.speed <0) this.speed = 0 
+        
+    }
+    move(){
+        this.distance += this.speed;
+    }
+}
 
 
+//!
+
+console.log(new Car (5));
 getUserInput();
-console.log({numberOfCars});
-console.log({distance});
 
 
 
@@ -65,10 +78,8 @@ console.log({distance});
 
 
 
-
-
-
-
+// `The car id is : ${this.id} \n\ current speed is : ${this.speed} \n\ 
+//         current distance is : ${this.distance}`
 
 
 
